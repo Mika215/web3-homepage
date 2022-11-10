@@ -1,0 +1,15 @@
+.home-page{
+
+  $root: ".home-page";
+
+  border: 2px solid red;
+
+  #{$root}__wrapper{
+
+    margin: 1rem;
+    border: 1px solid $dark;
+    background-color: $light-grey;
+    color: $dark;
+  }
+
+}
