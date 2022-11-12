@@ -5,8 +5,27 @@ $grey: #444444;
 $white: #fff;
 $dark: #212121;
 
-
 //breakpoints @media queries 
-$s:320px;
-$m: 768px;
-$l: 1240px;
+// $s:320px;
+// $m: 768px;
+// $l: 1240px;
+
+
+
+// colors from frontend mentor
+
+// # Pripmary
+$softOrange: hsl(35, 77%, 62%);
+$softRed: hsl(5, 85%, 63%);
+
+// ### Neutral
+
+$offWhite: hsl(36, 100%, 99%);
+$grayishBlue: hsl(233, 8%, 79%);
+$darkGrayishBlue: hsl(236, 13%, 42%);
+$veryDarkBlue: hsl(240, 100%, 5%);
+
+
+// break points from frontend mentor 
+$mobile: 375px;
+$desktop: 1440px;
