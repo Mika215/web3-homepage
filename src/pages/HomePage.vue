@@ -26,65 +26,30 @@
           </article>
         </div>
         <article class="alami-home-page__news-right">
-          <article class="alami-home-page__right-wrapper">
-            <h3 class="alami-home-page__right-title">New</h3>
-              
+          <h3 class="alami-home-page__right-title">New</h3>  
+          <article 
+            v-for="(topic,k) in newTopics"
+            :key="k"
+            class="alami-home-page__right-wrapper">
               <div class="alami-home-page__right-content">
-                <h5>Hydrogen VS Electric Cars</h5>
-                <p>Lorem ipsum dolor sit amet consectetur 
-                  adipisicing elit. Dignissimos, 
-                  quo quaerat eaque soluta neque, laudantium doloremque 
-                  illo vitae nostrum unde ipsa enim cupiditate molestias, eum ad laboriosam vero voluptatibus! Temporibus!</p>
-              </div>
-
-              <div class="alami-home-page__right-content">
-                <h5>The Downside of AI Artistry</h5>
-                <p>Lorem ipsum dolor sit amet consectetur 
-                  adipisicing elit. Dignissimos, 
-                  quo quaerat eaque soluta neque, laudantium doloremque 
-                  illo vitae nostrum unde ipsa enim cupiditate molestias, eum ad laboriosam vero voluptatibus! Temporibus!</p>
-              </div>
-
-              <div class="alami-home-page__right-content">
-                <h5>is VC Funding Drying Up?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur 
-                  adipisicing elit. Dignissimos, 
-                  quo quaerat eaque soluta neque, laudantium doloremque 
-                  illo vitae nostrum unde ipsa enim cupiditate molestias, eum ad laboriosam vero voluptatibus! Temporibus!</p>
-              </div>
-            
+                <h5>{{topic.title}}</h5>
+                <p>{{topic.description}}</p>
+              </div>    
           </article>
         </article>
       </section>
-      <div class="alami-home-page__ellipses-block">
+      <div 
+        v-for="(entry,j) in newsCollection"
+        :key="j"
+        class="alami-home-page__ellipses-block">
         <article class="alami-home-page__ellipses-item">
           <div class="alami-home-page__ellipses-item-image-container">
-            <img class="alami-home-page__ellipses-item-img"  src="/mds" alt="">
+            <img class="alami-home-page__ellipses-item-img"  :src="getImageUrl(entry.src)" :alt="entry.src">
           </div>
           <div class="alami-home-page__ellipses-item-content">
-            <span class="alami-home-page__ellipses-item-code">01</span>
-            <h6 class="alami-home-page__ellipses-item-title">Reviving Retro Pcs</h6>
-          <p class="alami-home-page__ellipses-item-desc">Lorem ipsum dolor sit amet.</p>
-          </div>
-        </article>
-        <article class="alami-home-page__ellipses-item">
-          <div class="alami-home-page__ellipses-item-image-container">
-            <img class="alami-home-page__ellipses-item-img"  src="/sshd" alt="">
-          </div>
-          <div class="alami-home-page__ellipses-item-content">
-            <span class="alami-home-page__ellipses-item-code">02</span>
-            <h6 class="alami-home-page__ellipses-item-title">Reviving Retro Pcs</h6>
-          <p class="alami-home-page__ellipses-item-desc">Lorem ipsum dolor sit amet.</p>
-          </div>
-        </article>
-        <article class="alami-home-page__ellipses-item">
-          <div class="alami-home-page__ellipses-item-image-container">
-            <img class="alami-home-page__ellipses-item-img"  src="/sd" alt="">
-          </div>
-          <div class="alami-home-page__ellipses-item-content">
-            <span class="alami-home-page__ellipses-item-code">03</span>
-            <h6 class="alami-home-page__ellipses-item-title">Reviving Retro Pcs</h6>
-          <p class="alami-home-page__ellipses-item-desc">Lorem ipsum dolor sit amet.</p>
+            <span class="alami-home-page__ellipses-item-code">{{entry.code}}</span>
+            <h6 class="alami-home-page__ellipses-item-title">{{entry.title}}</h6>
+          <p class="alami-home-page__ellipses-item-desc">{{entry.description}}</p>
           </div>
         </article>
       </div>
@@ -99,6 +64,7 @@
     name:'HomePage',
 
     computed:{
+
       menuItems(){
         return [
           {
@@ -117,7 +83,54 @@
             label:'Categories',
           },
         ]
-      }
+      },
+
+      newsCollection(){
+        return [
+          {
+            code:'01',
+            description:'What happenes when old Pcs are given modern upgrades?',
+            src:'image-retro-pcs',
+            title:'Reviving Retro PCs',
+          },
+          {
+            code:'02',
+            description:'Our best picks for various needs and budgets',
+            src:'image-top-laptops',
+            title:'Top 10Laptops of 2022',
+          },
+          {
+            code:'03',
+            description:'How the pandemic has spaked fresh opportunities',
+            src:'image-gaming-growth',
+            title:'The Growth of Gaming',
+          },
+        ]
+      },
+
+      newTopics(){
+        return [
+          {
+            description:'Will hydrogen-fueled cars ever catch up to EVs?',
+            title:'Hydrogen VS Electric Cars',
+          },
+          {
+            description:'What are the possible adverse effects of on-demand AI image generator?',
+            title:'The Downside of AI Artistry',
+          },
+          {
+            description:'Private funding by VC firms is down 50% YOY.We take a look at what that means. ',
+            title:'Is VC Funding Drying Up?',
+          },
+        ]
+      },
+    },
+
+    methods :{
+
+      getImageUrl(path){
+        return require(`../assets/images/${path}.jpg`);
+      },
     }
   }
 </script>
