@@ -1,15 +1,66 @@
-.home-page{
+.alami-home-page{
 
-  $root: ".home-page";
+  $root: ".alami-home-page";
+  background-color:$offWhite ;
 
-  border: 2px solid red;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 4.5rem;
 
-  #{$root}__wrapper{
-
-    margin: 1rem;
-    border: 1px solid $dark;
-    background-color: $light-grey;
-    color: $dark;
+  #{$root}__header{
+  display:flex;
+  justify-content: space-between;
   }
+
+  #{$root}__logo{
+    flex: 1;
+  }
+
+  #{$root}__menu{
+    // width: 100%;
+  }
+
+  #{$root}__menu-item{
+    list-style: none;
+    cursor: pointer;
+    &:hover{
+      color: red;
+    }
+  }
+
+  #{$root}__main{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #{$root}__news-block{
+    // border: 1px solid red;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  #{$root}__image-container{
+    // border: 1px solid red;
+    height:380px;
+    
+  }
+  #{$root}__img{
+    object-fit: contain;
+    max-height:380px;
+    
+  }
+
+  #{$root}__ellipses-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid yellow;
+    margin-top: 1.5rem;
+
+  }
+
 
 }

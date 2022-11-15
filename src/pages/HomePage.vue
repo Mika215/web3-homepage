@@ -1,7 +1,7 @@
 <template>
   <div class="alami-home-page">
     <header class="alami-home-page__header">
-      <div class="alami-home-page__logo">W.Logo</div>
+      <div class="alami-home-page__logo">W.</div>
       <ul 
         v-for="(item,i) in menuItems"
         :key="i"
@@ -13,7 +13,7 @@
       <section class="alami-home-page__news-block">
         <div class="alami-home-page__news-left">
           <figure class="alami-home-page__image-container">
-            <img src="" alt="" class="alami-home-page__img">
+            <img :src="getImageUrl(mainImages[0].src)" alt="" class="alami-home-page__img">
           </figure>
           <article class="alami-home-page__content-container">
             <h3 class="alami-home-page__contnet-title">The Brigt Future of Web 3.0?</h3>
@@ -38,11 +38,11 @@
           </article>
         </article>
       </section>
-      <div 
+      <div class="alami-home-page__ellipses-block">
+        <article 
         v-for="(entry,j) in newsCollection"
         :key="j"
-        class="alami-home-page__ellipses-block">
-        <article class="alami-home-page__ellipses-item">
+        class="alami-home-page__ellipses-item">
           <div class="alami-home-page__ellipses-item-image-container">
             <img class="alami-home-page__ellipses-item-img"  :src="getImageUrl(entry.src)" :alt="entry.src">
           </div>
@@ -81,6 +81,14 @@
           },
           {
             label:'Categories',
+          },
+        ]
+      },
+
+      mainImages(){
+        return [
+          {
+            src:'image-web-3-desktop',
           },
         ]
       },
