@@ -2,11 +2,11 @@
   <div class="alami-home-page">
     <header class="alami-home-page__header">
       <div class="alami-home-page__logo">W.</div>
-      <ul 
-        v-for="(item,i) in menuItems"
-        :key="i"
-        class="alami-home-page__menu">
-        <li class="alami-home-page__menu-item">{{item.label}}</li>
+      <ul class="alami-home-page__menu">
+        <li 
+          v-for="(item,i) in menuItems"
+          :key="i"
+          class="alami-home-page__menu-item">{{item.label}}</li>
       </ul>
     </header>
     <main class="alami-home-page__main">
@@ -16,7 +16,7 @@
             <img :src="getImageUrl(mainImages[0].src)" alt="" class="alami-home-page__img">
           </figure>
           <article class="alami-home-page__content-container">
-            <h3 class="alami-home-page__contnet-title">The Brigt Future of Web 3.0?</h3>
+            <h3 class="alami-home-page__content-title">The Bright Future of Web 3.0?</h3>
             <div class="alami-home-page__content-group">
               <div class="alami-home-page__content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quo quaerat eaque soluta neque, laudantium doloremque illo vitae nostrum unde ipsa enim cupiditate molestias, eum ad laboriosam vero voluptatibus! Temporibus!</p>
@@ -40,15 +40,15 @@
       </section>
       <div class="alami-home-page__ellipses-block">
         <article 
-        v-for="(entry,j) in newsCollection"
-        :key="j"
-        class="alami-home-page__ellipses-item">
+          v-for="(entry,j) in newsCollection"
+          :key="j"
+          class="alami-home-page__ellipses-item">
           <div class="alami-home-page__ellipses-item-image-container">
             <img class="alami-home-page__ellipses-item-img"  :src="getImageUrl(entry.src)" :alt="entry.src">
           </div>
           <div class="alami-home-page__ellipses-item-content">
             <span class="alami-home-page__ellipses-item-code">{{entry.code}}</span>
-            <h6 class="alami-home-page__ellipses-item-title">{{entry.title}}</h6>
+            <h5 class="alami-home-page__ellipses-item-title">{{entry.title}}</h5>
           <p class="alami-home-page__ellipses-item-desc">{{entry.description}}</p>
           </div>
         </article>

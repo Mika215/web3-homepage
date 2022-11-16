@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // font-family: $ff-poppins;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
+}
